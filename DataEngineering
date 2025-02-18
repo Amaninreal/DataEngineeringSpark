@@ -1,0 +1,92 @@
+Data Engineer Associate Progress
+
+AWS S3 - Storage
+Buckets ( container for storage ) and objects ( files )
+Each bucket is created in a specific region
+
+Rules - Buckets must have a globally unique name ( across all region , across all accounts )
+length is b/w 3 to 63
+only lowercase letters, no., dots, & hyphens
+
+Key - Each object is identified by a unique, user-assigned key
+
+Use cases - Backup & Recovery
+Website, Applications
+Data Archiving
+Data Lakes
+
+
+after creating s3 bucket we have some concepts for ingestion
+
+In data ingestion, you're simply bringing data from one or more sources into a storage or processing system — like a data warehouse, data lake, or analytics platform.
+
+✨ Think of it as “feeding” your system with data!
+
+✅ Sources:
+
+    Databases (SQL, NoSQL)
+    APIs
+    Files (CSV, JSON, Parquet)
+    Streaming platforms (Kafka, Kinesis)
+    IoT devices or logs
+
+✅ Destinations:
+
+    Data lakes (e.g., S3, Azure Data Lake)
+    Data warehouses (e.g., Redshift, BigQuery)
+    Processing engines (e.g., Spark, Flink)
+
+Batch ingestion: Data is collected and loaded in chunks at scheduled intervals.
+Streaming ingestion: Data is continuously collected and processed in real-time or near real-time.
+
+-- Streaming Ingestion
+Enables real-time Ingestions
+Ideal for time sensitive data
+more expensive & intricate
+implemented using services like Amazon kinesis for streaming data.
+
+--- Batch Ingestion-
+ingests data periodically in batches
+typically large volumes
+cost effective & efficient
+tools like AWS GLUE commonly used
+
+AWS GLUE:
+AWS Glue is a fully managed ETL (Extract, Transform, Load) service by Amazon Web Services. It helps you prepare, transform, and move data between different data stores—without worrying about managing servers or infrastructure.
+
+Fully managed ETL (Extract, Transform, Load) Service
+Desgined to make it easy to load & transform data
+Visual Interface: Easily create ETL jobs without code
+
+Various Integration -> S3, RDS, Redshift, DynamoDB, Kinesis Data Streams, Document DB etc.
+
+Scripts auto generated behind the scenes'
+Uses Spark behing the scenes ( Without need to manange anything )
+
+🔥 Scenario:
+You have a CSV file with sales data stored in an S3 bucket. We’ll use AWS Glue to create a Data Catalog table so you can query this data with Athena.
+
+✅ Sales CSV file (stored in S3)
+s3://my-bucket/sales-data/sales.csv
+
+order_id,product,category,amount,date
+1001,Laptop,Electronics,1200,2024-02-10
+1002,Phone,Electronics,800,2024-02-11
+1003,Shoes,Apparel,150,2024-02-12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
