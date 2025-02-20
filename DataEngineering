@@ -74,6 +74,76 @@ order_id,product,category,amount,date
 1002,Phone,Electronics,800,2024-02-11
 1003,Shoes,Apparel,150,2024-02-12
 
+AWS Glue Data Catalog
+Centralized Data Catalog:
+Stores table schemas & metadata
+
+allows querying by:
+AWS Athena, RedShift, Quicksight, ENR
+
+
+Glue Crawlers:
+scan data sources,
+infer schema,
+stored in the AWS Glue Data Catalog
+=> Can automatically classify data
+
+Scheduling
+Run on a schedule or based on triggers
+increment loads/crawling (ETL Jobs & Crawlers)
+
+✅ Why do we need crawlers in AWS Glue?
+
+A crawler is a service that scans your data stores (like S3, RDS, or DynamoDB), extracts metadata, and creates or updates tables in the AWS Glue Data Catalog.
+
+    No manual schema definitions needed!
+    It helps Glue understand your data’s structure for ETL (Extract, Transform, Load) jobs.
+    Enables seamless querying using Amazon Athena, Redshift Spectrum, or EMR.
+
+🚀 Use cases for Glue Crawlers:
+
+1️⃣ Data Lake automation:
+
+    Continuously discover and catalog data in S3 buckets, even as new files are added.
+    Keep your Glue Data Catalog up-to-date without manual intervention.
+
+2️⃣ Schema evolution:
+
+    Automatically detect schema changes (e.g., new columns) and update tables.
+    Helps with semi-structured data like JSON, Parquet, or Avro.
+
+3️⃣ ETL pipelines:
+
+    Simplify the initial data exploration step before building ETL jobs.
+    Use the cataloged metadata in Glue ETL scripts or Athena queries.
+
+4️⃣ Data migration:
+
+    When migrating from on-premise to cloud, crawlers help rebuild schema mappings quickly.
+
+
+
+AWS Athena:
+
+Interactive query service:
+    Query files in s3 using SQL
+
+Serverless:
+    No infra to manage
+    Pay as you go
+
+S3 bucket -> crawler -> data catalog -> Athena -> quicksight
+
+Athena we can use there as a data source in quicksight
+QuickSight?
+
+Amazon QuickSight (Visualization Layer)
+
+    QuickSight connects to Athena to create interactive dashboards and reports.
+    It visualizes your queried data, providing business insights in the form of charts, graphs, and KPIs.
+
+✨ Why? Turns raw data into actionable insights for decision-makers.
+
 
 
 
