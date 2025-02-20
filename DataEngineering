@@ -144,8 +144,93 @@ Amazon QuickSight (Visualization Layer)
 
 ✨ Why? Turns raw data into actionable insights for decision-makers.
 
+AWS Athena use cases
+Log analysis
+Analyzing log files stored in Amazon S3
 
+Ad-Hoc Analysis:
+Ad-hoc queries on data lakes stored in s3
 
+Data Lake Analytics:
+Building a data lake on amazon s3 & using athena to query data
+
+Real time analytics:
+Integrating athena with streaming data sources such as Amazon Kinesis
+
+Athena - Federated Queries
+
+Query data sources other than S3 buckets using a data connector
+
+By this we can run queries in:
+Relational & non - relational data sources
+Object data sources
+Custom data sources
+
+Federated data sources: ( built in examples )
+
+Amazon Cloud watch logs
+Amazon dynamoDB
+Amazon DocumentDB
+Amazon RDS
+
+work with multiple sources
+
+Amazon RDS - Products table 
+Amazon DocumentDB - detailed customer profile data
+Amazon DynamoDb - user interactions
+
+Athena - Cost
+
+Pay for queries run - amount of data scanned
+Cost saving possible with reserved capacity
+
+Atena - Performance Optimization
+
+Use Partitions - 
+    it means we structure our data into partisions
+    Eliminate data partitions that need to be scanned (pruning)
+
+Use Partition Projection
+    Automate Partion management
+    Speed up queries for tables with large partitions
+
+AWS Glue Partition Indexes:
+    Athena retrieves only relevant partitions instead of loading all
+    Optimize query planning & reduce query 
+
+Athena - Query Result Reuse
+What it does?
+Reuse previous results that match your query & max. age
+
+When to use?
+Query where the source data doesn't change frequently.
+Repeated queries
+Large datasets the complex queries
+
+Athena - performance Optimization
+Data Compressions
+Reduce file size to speed up queries
+
+Format Conversion:
+transform data into an optimized structure such as Apache Parquet or Apache ORC columnar formats
+
+Athena Work groups:
+Isolate queries from other queries in the same account
+
+Isolate queries for different:
+    Teams
+    Use Cases
+    Applications
+    Different settings or to track & control cost
+
+Control 
+    Query execution settings
+    Access
+    Cost
+    Type of engine ( Athena SQL vs Apache Spark)
+
+upto 1000 workgroups per region
+Each account has primary workgroup.
 
 
 
